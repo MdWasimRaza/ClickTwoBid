@@ -1,0 +1,71 @@
+.auctionItem {
+    height: 380px;
+    width: 290px;
+    margin: 40px 15px 0 0;
+    background-color: #F2EAFE;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.auctionItem:hover {
+    border: 1px solid #7B30F4;
+    border-radius: 20px;
+}
+
+.time {
+    padding: 0 30px 0 30px;
+}
+
+.timeBox {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7B30F4;
+    border-radius: 10px;
+    margin-bottom: -20px;
+    color: white;
+    position: sticky;
+    z-index: 999;
+}
+
+.auctionImg {
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.liveAuctionproductName {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.rupeeIcon {
+    font-size: 20px !important;
+    color: #261D35;
+}
+
+.priceBox {
+    font-size: 18px;
+    margin-top: 24px;
+    color: #261D35;
+    font-weight: 100;
+}
+
+.bidPrice {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 8px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #261D35;
+}

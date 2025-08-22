@@ -1,0 +1,139 @@
+.profileMid {
+    display: flex;
+    margin: 0 80px 80px 80px;
+}
+
+.profileMidLeeft {
+    flex: 6;
+    margin-right: 20px;
+}
+
+.profileBtns {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0 0 0;
+}
+
+
+.profileBtn_1 {
+    height: 48px;
+    width: 140px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7B30F4;
+    font-size: 18px;
+    color: white;
+}
+
+.profileBtn_2 {
+    height: 48px;
+    width: 140px;
+    border: none;
+    border-radius: 8px;
+    background-color: #F2EAFE;
+    font-size: 18px;
+}
+
+.myProfile {
+    margin: 36px 0 36px 0;
+    font-size: 22px;
+    color: #7B30F4;
+}
+
+.profileDetails {
+    width: 90%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    margin: 20px 0;
+    padding: 42px;
+    display: flex;
+}
+
+.profilePic {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.profileDetail {
+    margin-left: 46px;
+}
+
+.userFullName {
+    font-size: 22px;
+}
+
+.details {
+    display: flex;
+    margin-top: 24px;
+    font-size: 20px;
+}
+
+.detailsEle {
+    font-weight: 100;
+    color: #261D35;
+}
+
+.profileEdit {
+    margin-top: 24px;
+    height: 48px;
+    width: 180px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7B30F4;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.profileMidRight {
+    flex: 6;
+    margin: 220px 0 0 36px;
+}
+
+.address {
+    font-size: 24px;
+    color: #261D35;
+}
+
+.addressBox {
+    margin-top: 24px;
+    height: 100px;
+    background-color: #F2EAFE;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.fullAddress {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #261D35;
+}
+
+.addAddress {
+    margin-top: 24px;
+    display: flex;
+    height: 48px;
+    border: 1px solid #7B30F4;
+    border-radius: 8px;
+    align-items: center;
+    padding-left: 12px;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.plus {
+    font-size: 28px;
+    color: #7B30F4;
+    font-weight: 600;
+}
+
+.plusAhead {
+    font-size: 20px;
+    font-weight: 100;
+    color: #261D35;
+}

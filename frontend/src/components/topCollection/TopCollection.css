@@ -1,0 +1,21 @@
+.topCollection {
+    padding: 60px 80px 60px 80px;
+    background-color: #DECBFC;
+    border-radius: 20px;
+}
+
+.topCollectionHeading {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.top {
+    color: #7B30F4;
+}
+
+
+/*
+.topColItems {
+    display: flex;
+    justify-content: space-between;
+}*/

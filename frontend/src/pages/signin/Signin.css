@@ -1,0 +1,47 @@
+.signin {
+    margin: 40px 160px 40px 160px;
+    display: flex;
+}
+
+.signinLeft {
+    flex: 5;
+}
+
+.signinHeading {
+    margin-top: 36px;
+    font-size: 38px;
+    font-weight: bolder;
+}
+
+.signinHeading2 {
+    margin: 20px 0 42px 0;
+    font-size: 17px;
+    font-weight: 100;
+}
+
+.noAccount {
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noAccHeading {
+    font-size: 18px;
+    font-weight: 100;
+
+}
+
+.noAccSignup {
+    margin-left: 12px;
+    font-size: 18px;
+    color: #7B30F4;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.singinRight {
+    flex: 7;
+    margin-left: 100px;
+}

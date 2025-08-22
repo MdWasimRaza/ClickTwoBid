@@ -1,0 +1,15 @@
+.auctionDetails {
+    height: 180px;
+    background-color: #DECBFC;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.auctionDetailsHeading {
+    padding-left: 80px;
+    padding-top: 25px;
+    font-size: 42px;
+    font-weight: 600;
+}

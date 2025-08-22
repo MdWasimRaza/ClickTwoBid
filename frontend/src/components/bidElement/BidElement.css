@@ -1,0 +1,46 @@
+.bidElement {
+    margin: 10px 0 10px 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxFirst {
+    display: flex;
+}
+
+.bidElementPic {
+    height: 54px;
+    width: 54px;
+    border-radius: 27px;
+    object-fit: cover;
+}
+
+.bidEleName {
+    padding-left: 15px;
+}
+
+.bidEleUser {
+    font-size: 20px;
+    color: #261D35;
+}
+
+.bidEleBiddedAt {
+    padding-top: 6px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.bidEleAmt {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.bidEleAmtVal {
+    font-size: 20px;
+    font-weight: 100;
+}

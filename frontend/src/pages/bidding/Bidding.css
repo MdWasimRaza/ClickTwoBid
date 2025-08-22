@@ -1,0 +1,172 @@
+.auctionDetails {
+    height: 180px;
+    background-color: #DECBFC;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.auctionDetailsHeading {
+    padding-left: 80px;
+    padding-top: 25px;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.productDetails {
+    margin: 80px 80px 0 80px;
+    display: flex;
+    justify-content: start;
+}
+
+
+.productImage {
+    flex: 6;
+    margin: 0 28px 28px 0;
+}
+
+.productImg_1 {
+    height: 500px;
+    border-radius: 16px;
+}
+
+.productDetailsRight {
+    flex: 6;
+}
+
+.editBtnBox {
+    display: flex;
+    margin-right: 90px;
+    justify-content: space-between;
+}
+
+.editBtn {
+    height: 36px;
+    width: 120px;
+    color: red;
+    font-size: 18px;
+    background-color: #DECBFC;
+    border: none;
+    border-radius: 16px;
+}
+
+.productName_1 {
+    height: 36px;
+    width: fit-content;
+    padding: 0 20px 0 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #DECBFC;
+    font-size: 20px;
+    color: #7b30f4;
+}
+
+.productTitel_1 {
+    margin: 24px 0 20px 0;
+    font-size: 42px;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.descriptions {
+    font-size: large;
+    font-weight: 100;
+}
+
+.startDate {
+    padding-top: 12px;
+    color: #7b30f4;
+}
+
+.date {
+    font-size: 20px;
+}
+
+.theDate {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.basePriceBox {
+    margin-top: 12px;
+    display: flex;
+    align-items: baseline;
+}
+
+.basePrice {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.placeBid {
+    margin-top: 20px;
+    height: 44px;
+    width: 66%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bidAmountInput {
+    margin-left: 10px;
+    height: 44px;
+    width: 250px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.placeBidBtn {
+    height: 44px;
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7b30f4;
+    color: white;
+}
+
+.bidOver {
+    margin-top: 12px;
+    height: 54px;
+    width: 66%;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #DECBFC;
+    color: red;
+}
+
+.bidNotStarted {
+    background-color: #7b30f4;
+    color: white;
+}
+
+.topBidders {
+    width: 60%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    margin: 20px 0;
+    padding: 22px;
+}
+
+.topBiddersHeading {
+    margin: 0px 0 18px 0;
+    font-size: 20px;
+    color: darkgray;
+}

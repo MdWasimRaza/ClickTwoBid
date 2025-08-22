@@ -1,0 +1,32 @@
+.signupLeftLog {
+    display: flex;
+    align-items: center;
+}
+
+.signupLogo {
+    font-size: 2rem;
+}
+
+.signupTwo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 0.3rem;
+}
+
+.bidBox {
+    height: 1.85rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    background-color: #7b30f4;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.biD {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,62 @@
+.upComingItem {
+    margin-top: 40px;
+    height: 500px;
+    width: 320px;
+    background-color: #F2EAFE;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.upComingItem:hover {
+    border: 1px solid #7b30f4;
+}
+
+.upComImgBox {
+    height: 340px;
+    width: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.upComProductName {
+    margin: 24px 0 0 20px;
+    font-size: 20px;
+}
+
+.upComDate {
+    margin: 20px 0 0 20px;
+    font-size: 18px;
+    color: #7b30f4;
+}
+
+.upComBidPrice {
+    width: 280px;
+    height: 36px;
+    margin-top: 15px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    border: 1px solid #7b30f4;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.upComBidPriceHeading {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.upComPriceBox {
+    display: flex;
+    align-items: center;
+}
+
+.rupeeIcon {
+    font-size: 18px !important;
+}
+
+.upComPrice {
+    font-size: 20px;
+    font-weight: 600;
+}

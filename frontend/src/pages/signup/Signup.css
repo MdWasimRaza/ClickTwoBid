@@ -1,0 +1,91 @@
+.signupPage {
+    display: flex;
+    margin: 28px 80px 120px 160px;
+}
+
+
+.signupLeft {
+    flex: 6;
+}
+
+
+
+.signupHeading {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.signupToWebsite {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.signupLeftDown {
+    height: 450px;
+    width: 80%;
+    margin-top: 28px;
+    padding-bottom: 120px;
+}
+
+.labelForInput {
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.formInputEle {
+    height: 42px;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding-left: 24px;
+    font-size: 16px;
+    margin: 8px 0 20px 0;
+}
+
+.forgotPassword {
+    display: flex;
+    justify-content: right;
+    margin: -12px 0 20px 0;
+    font-size: 20px;
+    color: #7B30F4;
+}
+
+.forgotBtnText {
+    cursor: pointer;
+}
+
+.signupBtn {
+    height: 42px;
+    width: 100%;
+    background-color: #7B30F4;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+.loginBtnLink {
+    color: #7B30F4;
+    margin-left: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.signupRight {
+    flex: 6;
+}
+
+.rightImgBox {
+    margin: 50px 0 0 36px;
+}
+
+.rightImg {
+    height: 600px;
+    width: 600px;
+    object-fit: fill;
+}

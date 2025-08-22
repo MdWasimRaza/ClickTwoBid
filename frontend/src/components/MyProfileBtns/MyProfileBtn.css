@@ -1,0 +1,12 @@
+.profileBtn_2 {
+    height: 48px;
+    width: 140px;
+    border: none;
+    border-radius: 8px;
+    background-color: #F2EAFE;
+    font-size: 18px;
+}
+
+.currentBtn {
+    background-color: #7B30F4;
+}

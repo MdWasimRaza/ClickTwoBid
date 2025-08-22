@@ -1,0 +1,193 @@
+.navWrapper {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    position: sticky;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.navbar {
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exceptCheckbtn {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+/* RE DESIGNING */
+
+.topbarSearch2 {
+    width: 40vw;
+}
+
+/*
+.searchBar {
+    width: 90%;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+}
+
+.searchIcon {
+    font-size: 20px !important;
+    margin-left: 0.8rem;
+}
+
+
+.searchInput {
+    border: none;
+    width: 70%;
+    outline: none;
+}
+*/
+
+/* Old style classes*/
+
+.searchBar {
+    width: 90%;
+    height: 35px;
+    margin-left: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    font-size: 20px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.searchInput {
+    border: none;
+    width: 70%;
+    outline: none;
+    font-size: 14px;
+    background-color: white !important;
+}
+
+.login {
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.signup {
+    height: 35px;
+    width: 5rem;
+    background-color: #7b30f4;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.goToMyProfile {
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 1.3rem;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* RE DESIGNING END*/
+#checkbtn {
+    padding: 1.7rem 0.5rem 0 2rem;
+    display: none;
+    float: right;
+}
+
+#check {
+    display: none;
+}
+
+.listItems {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.listItems li {
+    margin-left: 0rem;
+}
+
+
+/* FOR ELEMENT DESIGN */
+
+
+/* for showing the list item when the check button checked*/
+/*#check:checked~ul {
+    left: 0;
+}*/
+
+#check:checked~.exceptCheckbtn .listItems {
+    left: 0;
+}
+
+@media(max-width:900px) {
+    #checkbtn {
+        display: block;
+    }
+
+    .navbar ul {
+        width: 100%;
+        height: 100vh;
+        background-color: #DECBFC;
+        position: fixed;
+        z-index: 999 !important;
+        top: 110px;
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    .topbarSearch2 {
+        width: 60vw;
+    }
+
+    .listItems {
+        display: block !important;
+        text-align: center;
+        line-height: 40px;
+        margin: 20px 0;
+    }
+
+    #check:checked~.exceptCheckbtn .listItems {
+        left: 0;
+    }
+
+    /*
+    .navbar ul li {
+        display: block;
+        flex-direction: column;
+        text-align: center;
+        line-height: 40px;
+        margin: 20px;
+    }
+
+    .exceptCheckbtn ul li {
+        display: block;
+        flex-direction: column;
+        text-align: center;
+        line-height: 40px;
+        margin: 20px;
+    }*/
+}

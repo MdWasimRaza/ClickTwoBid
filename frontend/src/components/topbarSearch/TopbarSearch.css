@@ -1,0 +1,110 @@
+.topbarSearch {
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+
+.topbarLeft {
+    flex: 3;
+    display: flex;
+    margin-left: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 80px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.two {
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.bidbox {
+    height: 30px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #7b30f4;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bid {
+    font-size: 20px;
+}
+
+.topbarCenter {
+    flex: 5;
+}
+
+.searchBar {
+    width: 90%;
+    height: 35px;
+    margin-left: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    font-size: 20px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.searchInput {
+    border: none;
+    width: 70%;
+    outline: none;
+}
+
+.topbarRight {
+    flex: 4;
+    margin-right: 80px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.login {
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.signup {
+    height: 35px;
+    width: 90px;
+    background-color: #7b30f4;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.goToMyProfile {
+    height: 42px;
+    width: 42px;
+    border-radius: 21px;
+    object-fit: cover;
+    cursor: pointer;
+}

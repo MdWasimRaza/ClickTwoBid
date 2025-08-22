@@ -1,0 +1,21 @@
+.upComing {
+    padding: 60px 80px 60px 80px;
+}
+
+.upComingHeading_1 {
+    font-size: 36px;
+    color: #7b30f4;
+    font-weight: 600;
+}
+
+
+.upComingHeading_2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/*
+.UpComingItems {
+    display: flex;
+    justify-content: space-between;
+}*/

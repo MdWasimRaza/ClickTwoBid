@@ -1,0 +1,19 @@
+.catElement {
+    height: 120px;
+    width: 300px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.catEleImgBox {
+    margin-right: 20px;
+}
+
+.catEleImg {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}

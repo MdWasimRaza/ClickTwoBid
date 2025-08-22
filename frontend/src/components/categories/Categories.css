@@ -1,0 +1,26 @@
+.topCategories {
+    background-color: #F2EAFE;
+    padding: 80px;
+}
+
+.topCatElements {
+    width: 100%- 80px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.topCatHeading {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.topCatHeading_1 {
+    color: #7B30F4;
+}
+
+.catElements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -10,7 +10,7 @@ import Bid from "./pages/bid/Bid";
 import WonItem from "./pages/wonItem/WonItem";
 import EditProduct from "./pages/editProduct/EditProduct";
 import Biidding from "./pages/bidding/Biidding";
-import ResponsiveCheck from "./pages/responsiveCheck/responsiveCheck";
+import ResponsiveCheck from "./pages/responsiveCheck/ResponsiveCheck";
 import ArtsCrafts from "./pages/arts&Crafts/Arts&Crafts";
 import Search from "./pages/search/Search";
 

@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // your Render frontend URL
+    origin: "https://click-two-bid.vercel.app/", // your Render frontend URL
     credentials: true
 }));
 

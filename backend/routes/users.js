@@ -9,7 +9,9 @@ const multer = require('multer')
 const { storage } = require("../cloudineryConfig");
 const upload = multer({ storage })
 
-router.post("/signup", async (req, res) => {
+const BASE_URL = "https://click-two-n9kk7l2w6-wasims-projects-3d424c10.vercel.app/"
+
+router.post(`${BASE_URL}/signup`, async (req, res) => {
 
     let newUser = new User({
         email: req.body.email,

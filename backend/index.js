@@ -6,6 +6,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require(".//models/user")
 const Product = require("./models/product")
+const cors = require("cors")
 
 require('dotenv').config();
 
@@ -34,6 +35,10 @@ async function main() {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cors({
+    origin: process.env.FRONTEND_URL, // your Render frontend URL
+    credentials: true
+}));
 
 // for express session saving cookies 
 const sessionOption = {
@@ -71,7 +76,7 @@ app.use((err, req, res, next) => {
     console.log(message)
 })
 
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log("Server 8080 is Listening");
 })

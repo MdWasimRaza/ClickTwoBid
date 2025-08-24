@@ -10,6 +10,9 @@ export default function () {
     const password = useRef();
     const navigate = useNavigate();
 
+    const BASE_URL = "https://clicktwobid.onrender.com/"
+
+
     const handleOnClick = async (event) => {
         event.preventDefault();
 
@@ -19,7 +22,7 @@ export default function () {
             password: password.current.value,
         }
         try {
-            const loggedInUser = await axios.post("/api/users/signin", newPost)
+            const loggedInUser = await axios.post(`${BASE_URL}/api/users/signin`, newPost)
             if (loggedInUser.data === "Sucessfully Login") {
                 navigate("/profile")
             } else {

@@ -16,6 +16,8 @@ export default function () {
     const productImage = useRef(null)
     const navigate = useNavigate();
 
+    const BASE_URL = "https://clicktwobid.onrender.com/"
+
     // for previewing Image
     const [image, setImage] = useState()
     function getFile(event) {
@@ -37,7 +39,7 @@ export default function () {
         formData.append("category", category.current.value);
 
         try {
-            const addedProduct = await axios.post("/api/products/newProduct", formData);
+            const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData);
             if (addedProduct.data?.message === "Product added sucessfully") {
                 navigate("/");
             } else {

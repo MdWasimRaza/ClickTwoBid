@@ -30,7 +30,8 @@ export default function () {
             }
 
             try {
-                await axios.post(`${BASE_URL}/api/users/signup`, newPost)
+                //await axios.post(`${BASE_URL}/api/users/signup`, newPost)
+                await axios.post(`/api/users/signup`, newPost)
                 navigate("/signin")
             } catch (err) {
                 console.log(err)

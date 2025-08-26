@@ -39,7 +39,8 @@ export default function () {
         formData.append("category", category.current.value);
 
         try {
-            const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData);
+            //const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData);
+            const addedProduct = await axios.post(`/api/products/newProduct`, formData);
             if (addedProduct.data?.message === "Product added sucessfully") {
                 navigate("/");
             } else {

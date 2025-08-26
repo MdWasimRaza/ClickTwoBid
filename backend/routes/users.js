@@ -11,7 +11,18 @@ const upload = multer({ storage })
 
 const BASE_URL = "https://click-two-n9kk7l2w6-wasims-projects-3d424c10.vercel.app/"
 
-router.post(`${BASE_URL}/signup`, async (req, res) => {
+/*router.post(`${BASE_URL}/signup`, async (req, res) => {
+
+    let newUser = new User({
+        email: req.body.email,
+        username: req.body.username,
+    })
+    let registeredUser = await User.register(newUser, req.body.password)
+    console.log(registeredUser)
+    res.json("sucessfull")
+})*/
+
+router.post(`/signup`, async (req, res) => {
 
     let newUser = new User({
         email: req.body.email,

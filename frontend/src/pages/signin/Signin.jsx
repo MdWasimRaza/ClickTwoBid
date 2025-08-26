@@ -23,6 +23,7 @@ export default function () {
         }
         try {
             const loggedInUser = await axios.post(`${BASE_URL}/api/users/signin`, newPost)
+            //const loggedInUser = await axios.post(`/api/users/signin`, newPost)
             if (loggedInUser.data === "Sucessfully Login") {
                 navigate("/profile")
             } else {

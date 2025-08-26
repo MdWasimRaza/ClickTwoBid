@@ -17,7 +17,7 @@ export default function ({ post }) {
 
     return (
         <div className="upComingItem">
-            <Link to={`${BASE_URL}/api/productdetails/${post._id}`} style={{ textDecoration: "none" }}>
+            <Link to={`${BASE_URL}/api/products/productdetails/${post._id}`} style={{ textDecoration: "none" }}>
                 <div className="upComBox">
                     <img className="upComImgBox" src={post?.productImage?.url || "/Image/camera.jpg"} alt="Product Image" />
                     <h5 className="upComProductName">{post.productName}</h5>

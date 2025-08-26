@@ -19,6 +19,7 @@ export default function () {
         async function getUser(params) {
             try {
                 const user = await axios.get(`${BASE_URL}/api/users/authenticate`)
+                console.log(user.data)
                 setUser(user.data)
             } catch (err) {
                 console.log(err)

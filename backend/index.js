@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: "https://click-two-n9kk7l2w6-wasims-projects-3d424c10.vercel.app/",
+    origin: "https://click-two-n9kk7l2w6-wasims-projects-3d424c10.vercel.app",
     credentials: true
 }));
 

@@ -10,10 +10,11 @@ export default function () {
 
     const [posts, setPosts] = useState([])
     //const { user } = useContext(AuthContext)
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get("/api/products/getAllProducts")
+            const res = await axios.get(`${BASE_URL}/api/products/getAllProducts`)
             setPosts(res.data);
         }
         fetchPosts();

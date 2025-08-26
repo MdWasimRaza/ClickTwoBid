@@ -8,10 +8,11 @@ import axios from "axios";
 
 export default function () {
     const [posts, setPosts] = useState([])
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get("/api/products/getTopCollection")
+            const res = await axios.get(`${BASE_URL}/api/products/getTopCollection`)
             setPosts(res.data);
         }
         fetchPosts();

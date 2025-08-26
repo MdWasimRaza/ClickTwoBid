@@ -11,10 +11,11 @@ export default function LiveAuction() {
 
     const [posts, setPosts] = useState([])
     //const { user } = useContext(AuthContext)
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get("/api/products/getTodaysProducts")
+            const res = await axios.get(`${BASE_URL}/api/products/getTodaysProducts`)
             setPosts(res.data);
         }
         fetchPosts();

@@ -13,9 +13,11 @@ export default function ({ post }) {
     const month = bidDateObj.toLocaleString('default', { month: 'long' });
     const year = bidDateObj.getFullYear();
 
+    const BASE_URL = "https://clicktwobid.onrender.com/"
+
     return (
         <div className="upComingItem">
-            <Link to={`/productdetails/${post._id}`} style={{ textDecoration: "none" }}>
+            <Link to={`${BASE_URL}/productdetails/${post._id}`} style={{ textDecoration: "none" }}>
                 <div className="upComBox">
                     <img className="upComImgBox" src={post?.productImage?.url || "/Image/camera.jpg"} alt="Product Image" />
                     <h5 className="upComProductName">{post.productName}</h5>

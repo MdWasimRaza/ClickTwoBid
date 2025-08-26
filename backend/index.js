@@ -35,8 +35,19 @@ async function main() {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const allowedOrigins = [
+    "https://click-two-bid.vercel.app",
+    "http://localhost:3000"
+];
+
 app.use(cors({
-    origin: "https://click-two-n9kk7l2w6-wasims-projects-3d424c10.vercel.app",
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true
 }));
 

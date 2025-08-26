@@ -13,7 +13,7 @@ export default function ({ post }) {
     const month = bidDateObj.toLocaleString('default', { month: 'long' });
     const year = bidDateObj.getFullYear();
 
-    const BASE_URL = "https://clicktwobid.onrender.com/"
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     return (
         <div className="upComingItem">

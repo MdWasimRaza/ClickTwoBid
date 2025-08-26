@@ -13,13 +13,16 @@ import BidElement from "../../components/bidElement/BidElement"
 
 export default function () {
 
+
+    const BASE_URL = "https://clicktwobid.onrender.com"
+
     const [product, setProduct] = useState({})
     const [bids, setBids] = useState([])
     const navigate = useNavigate();
     const productId = useParams().id;
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`/api/products/productdetails/${productId}`)
+            const res = await axios.get(`${BASE_URL}/api/products/productdetails/${productId}`)
             setProduct(res.data);
         }
         fetchUser();
@@ -30,7 +33,7 @@ export default function () {
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get("/api/users/authenticate")
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`)
                 setUser(user.data)
             } catch (err) {
                 console.log(err)
@@ -42,7 +45,7 @@ export default function () {
     // For Bid details
     useEffect(() => {
         const fetchUser = async () => {
-            const bids = await axios.get(`/api/bids/getbids/${productId}`)
+            const bids = await axios.get(`${BASE_URL}/api/bids/getbids/${productId}`)
             setBids(bids.data);
         }
         fetchUser();
@@ -70,7 +73,7 @@ export default function () {
             bidTime: start,
         }
         try {
-            const placedBid = await axios.post("/api/bids/placebid", newBid)
+            const placedBid = await axios.post(`${BASE_URL}/api/bids/placebid`, newBid)
             console.log(placedBid)
         } catch (err) {
             console.log(err)
@@ -83,19 +86,19 @@ export default function () {
         const newproduct = {
             productId: productId,
         }
-        const winner = await axios.post("/api/bids/winner", newproduct)
+        const winner = await axios.post(`${BASE_URL}/api/bids/winner`, newproduct)
         alert(`The Winner is : ${winner.data}`)
         navigate("/")
     }
 
     // for edit
     const handleEdit = () => {
-        navigate(`/editproduct/${product._id}`)
+        navigate(`${BASE_URL}/editproduct/${product._id}`)
     }
 
     // For deleting product
     const handleDelete = async () => {
-        const res = await axios.get(`/api/products/${product._id}/delete`)
+        const res = await axios.get(`${BASE_URL}/api/products/${product._id}/delete`)
         navigate("/")
     }
 

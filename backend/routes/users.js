@@ -83,6 +83,7 @@ router.post("/signin", passport.authenticate("local", { failureRedirect: "/signi
 
 
 // for checking Authentication
+/*
 router.get("/authenticate", (req, res) => {
     if (req.isAuthenticated()) {
         res.send(req.user)
@@ -90,6 +91,7 @@ router.get("/authenticate", (req, res) => {
         res.send("Not Authenticated")
     }
 })
+    */
 
 
 // for Logout user

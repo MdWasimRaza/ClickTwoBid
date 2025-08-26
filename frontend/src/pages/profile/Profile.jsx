@@ -13,12 +13,12 @@ import { Link } from "react-router-dom"
 export default function () {
 
     const [user, setUser] = useState({})
-    const BASE_URL = "https://clicktwobid.onrender.com"
+    const BASE_URL = "https://clicktwobid.onrender.com/"
 
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get(`${BASE_URL}/api/users/authenticate`)
+                const user = await axios.get(`${BASE_URL}api/users/authenticate`)
                 console.log(user.data)
                 setUser(user.data)
             } catch (err) {

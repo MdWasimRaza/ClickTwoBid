@@ -33,6 +33,20 @@ router.post(`/signup`, async (req, res) => {
     res.json("sucessfull")
 })
 
+// Check if user is authenticated
+router.get("/authenticate", (req, res) => {
+    if (req.isAuthenticated()) {
+        res.json({
+            authenticated: true,
+            user: req.user   // Passport puts the user object here
+        });
+    } else {
+        res.status(401).json({
+            authenticated: false
+        });
+    }
+});
+
 
 // SignUp for Admin User
 router.get("/createAdminUser", async (req, res) => {

@@ -15,7 +15,7 @@ export default function LiveAuction() {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get(`${BASE_URL}/api/products/getTodaysProducts`)
+            const res = await axios.get(`${BASE_URL}/api/products/getTodaysProducts`, { withCredentials: true })
             setPosts(res.data);
         }
         fetchPosts();

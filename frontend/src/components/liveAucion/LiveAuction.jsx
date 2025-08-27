@@ -17,6 +17,7 @@ export default function LiveAuction() {
         const fetchPosts = async () => {
             try {
                 const res = await axios.get(`${BASE_URL}/api/products/getTodaysProducts`);
+                console.log("LIve Auction ", res)
                 setPosts(res.data);
             } catch (err) {
                 console.error("Error fetching posts:", err);

@@ -5,6 +5,8 @@ import TopbarSearch from "../../components/topbarSearch/TopbarSearch";
 
 export default function EditProduct() {
 
+
+    const BASE_URL = "https://clicktwobid.onrender.com"
     // new code
     const { id: productId } = useParams();
     const [file, setFile] = useState(null)
@@ -23,7 +25,7 @@ export default function EditProduct() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`/api/products/productdetails/${productId}`);
+                const res = await axios.get(`${BASE_URL}/api/products/productdetails/${productId}`);
                 setProduct({ ...product, productName: res.data.productName, title: res.data.title, description: res.data.description, bidDate: res.data.bidDate, basePrice: res.data.basePrice, ownerId: res.data.ownerId });
             } catch (err) {
                 console.error("Error fetching product:", err);
@@ -66,7 +68,7 @@ export default function EditProduct() {
 
         try {
             console.log(formData)
-            const response = await axios.post(`/api/products/update/${productId}`, formData);
+            const response = await axios.post(`${BASE_URL}/api/products/update/${productId}`, formData);
             console.log("Updated:", response.data);
             navigate("/");
 

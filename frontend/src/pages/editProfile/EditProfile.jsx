@@ -10,11 +10,13 @@ import { Navigate } from "react-router-dom"
 
 export default function EditProfile() {
 
+    const BASE_URL = "https://clicktwobid.onrender.com"
+
     const [user, setUser] = useState({})
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get("/api/users/authenticate")
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`, { withCredentials: true })
                 setUser(user.data)
             } catch (err) {
                 console.log(err)
@@ -44,7 +46,7 @@ export default function EditProfile() {
 
         try {
             console.log(formData)
-            await axios.post(`/api/users/updateprofile/${user._id}`, formData)
+            await axios.post(`${BASE_URL}/api/users/updateprofile/${user._id}`, formData)
             navigate("/profile")
         } catch (err) {
             console.log(err)

@@ -33,7 +33,7 @@ export default function () {
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get(`${BASE_URL}/api/users/authenticate`)
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`, { withCredentials: true })
                 setUser(user.data)
             } catch (err) {
                 console.log(err)

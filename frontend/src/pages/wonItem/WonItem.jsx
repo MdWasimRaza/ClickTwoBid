@@ -12,12 +12,13 @@ import axios from "axios";
 
 export default function () {
 
+    const BASE_URL = "https://clicktwobid.onrender.com"
     const [bids, setBids] = useState([])
 
     useEffect(() => {
         async function getUser(params) {
             try {
-                const mybids = await axios.get("/api/bids/wonItem")
+                const mybids = await axios.get(`${BASE_URL}/api/bids/wonItem`)
                 setBids(mybids.data)
             } catch (err) {
                 console.log(err)

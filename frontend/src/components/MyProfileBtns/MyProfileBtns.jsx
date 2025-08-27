@@ -5,11 +5,12 @@ import { useState, useEffect } from "react"
 
 export default function ({ number }) {
     const [user, setUser] = useState({})
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get("/api/users/authenticate")
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`, { withCredentials: true })
                 setUser(user.data)
             } catch (err) {
                 console.log(err)

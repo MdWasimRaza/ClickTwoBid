@@ -11,7 +11,7 @@ export default function () {
     const passwordAgain = useRef();
     const navigate = useNavigate();
 
-    const BASE_URL = "https://clicktwobid.onrender.com/"
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
 
     // for handling default characteristic of form submition
@@ -31,7 +31,7 @@ export default function () {
 
             try {
                 //await axios.post(`${BASE_URL}/api/users/signup`, newPost)
-                await axios.post(`/api/users/signup`, newPost)
+                await axios.post(`${BASE_URL}/api/users/signup`, newPost)
                 navigate("/signin")
             } catch (err) {
                 console.log(err)

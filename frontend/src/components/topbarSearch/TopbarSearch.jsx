@@ -9,11 +9,12 @@ export default function TopbarSearch() {
 
     const [user, setUser] = useState({})
     const navigate = useNavigate();
+    const BASE_URL = "https://clicktwobid.onrender.com"
 
     async function callLogout(params) {
         console.log("Logout function called")
         try {
-            const user = await axios.get("/api/users/logout", { withCredentials: true })
+            const user = await axios.get(`${BASE_URL}/api/users/logout`, { withCredentials: true })
             console.log("Logout successful");
             navigate("/signin")
         } catch (err) {
@@ -25,7 +26,7 @@ export default function TopbarSearch() {
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get("/api/users/authenticate", { withCredentials: true })
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`, { withCredentials: true })
                 setUser(user.data)
             } catch (err) {
                 console.log(err)

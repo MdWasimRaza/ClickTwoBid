@@ -63,33 +63,30 @@ router.post("/update/:_id", upload.single("productImage"), wrapAsync(async (req,
 
 
 // For getting Todays's Auction Items
-/*
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
-    const timeZone = 'Asia/Kolkata';
+    const timeZone = 'Asia/Kolkata'; // IST
 
     // Current time in IST
     const nowInIST = utcToZonedTime(new Date(), timeZone);
 
-    // Start and end of today in IST (as JS Date in UTC)
-    const todayStart = startOfDay(nowInIST);
-    const todayEnd = endOfDay(nowInIST);
+    // Start and end of today in IST
+    const todayStartIST = startOfDay(nowInIST);
+    const todayEndIST = endOfDay(nowInIST);
 
-    console.log("IST Start:", todayStart);
-    console.log("IST End:", todayEnd);
+    console.log("IST Start:", todayStartIST);
+    console.log("IST End:", todayEndIST);
 
-    // Query products within IST today
     const posts = await Product.find({
         bidDate: {
-            $gte: todayStart,
-            $lte: todayEnd
+            $gte: todayStartIST,
+            $lte: todayEndIST
         }
     });
 
     res.json(posts);
-}));*/
+}));
 
-
-
+/*
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
 
     // For checking date
@@ -105,7 +102,7 @@ router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
         }
     });
     res.json(posts)
-}))
+})) */
 
 
 // for deleting the Product

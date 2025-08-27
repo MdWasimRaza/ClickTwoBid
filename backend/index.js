@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require(".//models/user")
@@ -16,6 +17,19 @@ const productRoutes = require("./routes/products")
 const bidRoutes = require("./routes/bid")
 
 const db_url = process.env.ATLASDB_URL;
+// for storing express session in mongostore
+const store = MongoStore.create({
+    mongoUrl: db_url,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 60 * 60,
+});
+
+store.on("error", () => {
+    console.log("Mongo Session Error", err);
+});
+
 
 
 main().then(() => {
@@ -53,6 +67,7 @@ app.use(cors({
 
 // for express session saving cookies 
 const sessionOption = {
+    store,
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,

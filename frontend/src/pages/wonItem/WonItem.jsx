@@ -18,7 +18,7 @@ export default function () {
     useEffect(() => {
         async function getUser(params) {
             try {
-                const mybids = await axios.get(`${BASE_URL}/api/bids/wonItem`)
+                const mybids = await axios.get(`${BASE_URL}/api/bids/wonItem`, { withCredentials: true })
                 setBids(mybids.data)
             } catch (err) {
                 console.log(err)

@@ -41,7 +41,7 @@ export default function () {
 
         try {
             //const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData);
-            const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData);
+            const addedProduct = await axios.post(`${BASE_URL}/api/products/newProduct`, formData, { withCredentials: true });
             if (addedProduct.data?.message === "Product added sucessfully") {
                 navigate("/");
             } else {

@@ -5,6 +5,8 @@ const Bid = require("../models/bid")
 const User = require("../models/user")
 const wrapAsync = require("../utils/wrapAsync")
 const ExpressError = require("../utils/ExpressError")
+const { startOfDay, endOfDay } = require('date-fns');
+const { utcToZonedTime } = require('date-fns-tz');
 
 // for Uploading Images
 const multer = require('multer')
@@ -62,6 +64,32 @@ router.post("/update/:_id", upload.single("productImage"), wrapAsync(async (req,
 
 // For getting Todays's Auction Items
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
+    const timeZone = 'Asia/Kolkata'; // IST
+
+    // Get current time in IST
+    const nowInIST = utcToZonedTime(new Date(), timeZone);
+
+    // Get start and end of today in IST
+    const todayStartIST = zonedTimeToUtc(startOfDay(nowInIST), timeZone);
+    const todayEndIST = zonedTimeToUtc(endOfDay(nowInIST), timeZone);
+
+    console.log("IST Start:", todayStartIST);
+    console.log("IST End:", todayEndIST);
+
+    // Query products within IST today
+    const posts = await Product.find({
+        bidDate: {
+            $gte: todayStartIST,
+            $lte: todayEndIST
+        }
+    });
+
+    res.json(posts);
+}));
+
+
+/*
+router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
 
     // For checking date
     const startOfDay = new Date();
@@ -77,6 +105,7 @@ router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
     });
     res.json(posts)
 }))
+    */
 
 // for deleting the Product
 router.get("/:_id/delete", wrapAsync(async (req, res, next) => {

@@ -66,6 +66,7 @@ app.use(cors({
 }));
 
 // for express session saving cookies 
+app.set("trust proxy", 1); // important when deploying on Render/Heroku/NGINX
 const sessionOption = {
     store,
     secret: process.env.SECRET,

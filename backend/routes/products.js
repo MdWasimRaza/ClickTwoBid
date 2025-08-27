@@ -67,19 +67,19 @@ router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
     const timeZone = 'Asia/Kolkata'; // IST
 
     // Current time in IST
-    const nowInIST = utcToZonedTime(new Date(), timeZone);
+    const now = new Date();
 
-    // Start and end of today in IST
-    const todayStartIST = startOfDay(nowInIST);
-    const todayEndIST = endOfDay(nowInIST);
+    // Convert start/end of today in IST to UTC for MongoDB
+    const todayStartUTC = zonedTimeToUtc(startOfDay(now), timeZone);
+    const todayEndUTC = zonedTimeToUtc(endOfDay(now), timeZone);
 
-    console.log("IST Start:", todayStartIST);
-    console.log("IST End:", todayEndIST);
+    console.log("Start UTC:", todayStartUTC);
+    console.log("End UTC:", todayEndUTC);
 
     const posts = await Product.find({
         bidDate: {
-            $gte: todayStartIST,
-            $lte: todayEndIST
+            $gte: todayStartUTC,
+            $lte: todayEndUTC
         }
     });
 

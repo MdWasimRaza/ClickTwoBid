@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default function ({ bid }) {
 
     // for formating the date in this form (1st may 2025)
+    console.log(bid)
     const getOrdinal = (n) => {
         const s = ["th", "st", "nd", "rd"];
         const v = n % 100;

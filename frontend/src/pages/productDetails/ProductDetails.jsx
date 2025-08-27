@@ -93,7 +93,7 @@ export default function () {
 
     // for edit
     const handleEdit = () => {
-        navigate(`${BASE_URL}/editproduct/${product._id}`)
+        navigate(`/editproduct/${product._id}`)
     }
 
     // For deleting product

@@ -64,23 +64,23 @@ router.post("/update/:_id", upload.single("productImage"), wrapAsync(async (req,
 
 // For getting Todays's Auction Items
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
-    const timeZone = 'Asia/Kolkata'; // IST
+    const timeZone = 'Asia/Kolkata';
 
-    // Get current time in IST
+    // Current time in IST
     const nowInIST = utcToZonedTime(new Date(), timeZone);
 
-    // Get start and end of today in IST
-    const todayStartIST = zonedTimeToUtc(startOfDay(nowInIST), timeZone);
-    const todayEndIST = zonedTimeToUtc(endOfDay(nowInIST), timeZone);
+    // Start and end of today in IST (as JS Date in UTC)
+    const todayStart = startOfDay(nowInIST);
+    const todayEnd = endOfDay(nowInIST);
 
-    console.log("IST Start:", todayStartIST);
-    console.log("IST End:", todayEndIST);
+    console.log("IST Start:", todayStart);
+    console.log("IST End:", todayEnd);
 
     // Query products within IST today
     const posts = await Product.find({
         bidDate: {
-            $gte: todayStartIST,
-            $lte: todayEndIST
+            $gte: todayStart,
+            $lte: todayEnd
         }
     });
 

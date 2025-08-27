@@ -71,7 +71,6 @@ const sessionOption = {
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    credentials: true,
     cookie: {
         // cookie will expire after 5 days
         expires: Date.now() + 5 * 24 * 60 * 60 * 1000, // milliseconds ( for seven days)

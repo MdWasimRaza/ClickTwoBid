@@ -63,6 +63,7 @@ router.post("/update/:_id", upload.single("productImage"), wrapAsync(async (req,
 
 
 // For getting Todays's Auction Items
+/*
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
     const timeZone = 'Asia/Kolkata';
 
@@ -85,10 +86,10 @@ router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
     });
 
     res.json(posts);
-}));
+}));*/
 
 
-/*
+
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
 
     // For checking date
@@ -105,7 +106,7 @@ router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
     });
     res.json(posts)
 }))
-    */
+
 
 // for deleting the Product
 router.get("/:_id/delete", wrapAsync(async (req, res, next) => {

@@ -20,6 +20,7 @@ export default function () {
             try {
                 //const mybids = await axios.get(`${BASE_URL}/api/bids/mybids`)
                 const mybids = await axios.get(`${BASE_URL}/api/bids/mybids`)
+                console.log(mybids)
                 setBids(mybids.data)
             } catch (err) {
                 console.log(err)

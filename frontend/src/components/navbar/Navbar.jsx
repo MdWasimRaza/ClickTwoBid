@@ -7,13 +7,14 @@ import axios from "axios";
 
 export default function Navbar() {
 
+    const BASE_URL = "https://clicktwobid.onrender.com"
     const [user, setUser] = useState({})
     const navigate = useNavigate();
 
     async function callLogout(params) {
         console.log("Logout function called")
         try {
-            const user = await axios.get("/api/users/logout", { withCredentials: true })
+            const user = await axios.get(`${BASE_URL}/api/users/logout`, { withCredentials: true })
             console.log("Logout successful");
             navigate("/signin")
         } catch (err) {
@@ -25,7 +26,7 @@ export default function Navbar() {
     useEffect(() => {
         async function getUser(params) {
             try {
-                const user = await axios.get("/api/users/authenticate", { withCredentials: true })
+                const user = await axios.get(`${BASE_URL}/api/users/authenticate`, { withCredentials: true })
                 setUser(user.data)
             } catch (err) {
                 console.log(err)
@@ -42,7 +43,7 @@ export default function Navbar() {
             title: searched.current.value,
         }
         try {
-            const result = await axios.post("/api/products/search", searchedTitle)
+            const result = await axios.post(`${BASE_URL}/api/products/search`, searchedTitle)
             navigate("/search", { state: { result: result.data } })
         } catch (err) {
             console.log(err)

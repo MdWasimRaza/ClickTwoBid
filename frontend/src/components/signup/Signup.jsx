@@ -4,6 +4,8 @@ import axios from "axios";
 
 export default function () {
 
+    const BASE_URL = "https://clicktwobid.onrender.com"
+
     let [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -34,7 +36,7 @@ export default function () {
         }
 
         try {
-            await axios.post("/api/users/signup", newPost)
+            await axios.post(`${BASE_URL}/api/users/signup`, newPost)
         } catch (err) {
             console.log(err)
         }

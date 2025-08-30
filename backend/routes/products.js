@@ -64,24 +64,38 @@ router.post("/update/:_id", upload.single("productImage"), wrapAsync(async (req,
 
 // For getting Todays's Auction Items
 router.get("/getTodaysProducts", wrapAsync(async (req, res, next) => {
-    const timeZone = 'Asia/Kolkata'; // IST
+    // get today's date in IST
+    function getISTDayRange() {
+        const now = new Date();
 
-    // Current time in IST
-    const now = new Date();
+        // IST is UTC+5:30
+        const istOffset = 5.5 * 60; // in minutes
+        const utcOffset = now.getTimezoneOffset(); // server's offset from UTC in minutes
 
-    // Convert start/end of today in IST to UTC for MongoDB
-    const todayStartUTC = zonedTimeToUtc(startOfDay(now), timeZone);
-    const todayEndUTC = zonedTimeToUtc(endOfDay(now), timeZone);
+        // Convert server time -> IST
+        const istNow = new Date(now.getTime() + (istOffset + utcOffset) * 60 * 1000);
 
-    console.log("Start UTC:", todayStartUTC);
-    console.log("End UTC:", todayEndUTC);
+        // Start of IST day
+        const startOfDayIST = new Date(istNow.setHours(0, 0, 0, 0));
+        const endOfDayIST = new Date(istNow.setHours(23, 59, 59, 999));
+
+        // Convert IST range back to UTC (since Mongo stores in UTC)
+        const startUTC = new Date(startOfDayIST.getTime() - istOffset * 60 * 1000);
+        const endUTC = new Date(endOfDayIST.getTime() - istOffset * 60 * 1000);
+
+        return { startUTC, endUTC };
+    }
+
+    // usage in query
+    const { startUTC, endUTC } = getISTDayRange();
 
     const posts = await Product.find({
         bidDate: {
-            $gte: todayStartUTC,
-            $lte: todayEndUTC
+            $gte: startUTC,
+            $lte: endUTC
         }
     });
+
 
     res.json(posts);
 }));

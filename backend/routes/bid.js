@@ -19,9 +19,14 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
     const currentMinuts = istNow.getMinutes()
     const currentHour = istNow.getHours();
     const product = await Product.findById(newBid.productId)
-    const [startHour, startMinute] = product.bidStartTime
+    /*const [startHour, startMinute] = product.bidStartTime
         ? product.bidStartTime.split(":").map(Number)
-        : [];
+        : [];*/
+
+    const bidStart = new Date(product.bidStartTime);
+    const startHour = bidStart.getHours();   // server timezone
+    const startMinute = bidStart.getMinutes();
+
     res.json(startHour)
     /*
         const newBid = new Bid(req.body)

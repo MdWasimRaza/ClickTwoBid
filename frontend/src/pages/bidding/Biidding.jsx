@@ -79,6 +79,7 @@ export default function () {
             bidAmount: bidAmount.current.value,
         }
         try {
+            console.log(newBid)
             const placedBid = await axios.post(`${BASE_URL}/api/bids/placebid`, newBid)
             console.log(placedBid)
         } catch (err) {

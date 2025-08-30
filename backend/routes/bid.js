@@ -7,11 +7,6 @@ const ExpressError = require("../utils/ExpressError")
 const wrapAsync = require("../utils/wrapAsync")
 
 router.post("/placebid", wrapAsync(async (req, res, next) => {
-    /*
-    const now = new Date();
-    const currentMinuts = now.getMinutes()
-    const currentHour = now.getHours();
-    */
 
     const now = new Date();
 
@@ -21,8 +16,9 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
 
     // Convert server time -> IST
     const istNow = new Date(now.getTime() + (istOffset + utcOffset) * 60 * 1000);
-    res.json(istNow.getMinutes())
-    /*
+    const currentMinuts = istNow.getMinutes()
+    const currentHour = istNow.getHours();
+
     const newBid = new Bid(req.body)
     newBid["userId"] = req.user._id
     newBid["userName"] = req.user.username
@@ -36,7 +32,7 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
     }
     else {
         res.status(200).json("Time Over")
-    }*/
+    }
 }))
 
 

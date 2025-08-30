@@ -7,17 +7,17 @@ const ExpressError = require("../utils/ExpressError")
 const wrapAsync = require("../utils/wrapAsync")
 
 router.post("/placebid", wrapAsync(async (req, res, next) => {
-
-    const now = new Date();
-
-    // IST is UTC+5:30
-    const istOffset = 5.5 * 60; // in minutes
-    const utcOffset = now.getTimezoneOffset(); // server's offset from UTC in minutes
-
-    // Convert server time -> IST
-    const istNow = new Date(now.getTime() + (istOffset + utcOffset) * 60 * 1000);
-    const currentMinuts = istNow.getMinutes()
-    const currentHour = istNow.getHours();
+    /*
+        const now = new Date();
+    
+        // IST is UTC+5:30
+        const istOffset = 5.5 * 60; // in minutes
+        const utcOffset = now.getTimezoneOffset(); // server's offset from UTC in minutes
+    
+        // Convert server time -> IST
+        const istNow = new Date(now.getTime() + (istOffset + utcOffset) * 60 * 1000);
+        const currentMinuts = istNow.getMinutes()
+        const currentHour = istNow.getHours();*/
     const newBid = new Bid(req.body)
     newBid["userId"] = req.user._id
     newBid["userName"] = req.user.username

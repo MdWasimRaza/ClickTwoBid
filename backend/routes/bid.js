@@ -23,11 +23,9 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
         ? product.bidStartTime.split(":").map(Number)
         : [];*/
 
-    const bidStart = new Date(product.bidStartTime);
-    const startHour = bidStart.getHours();   // server timezone
-    const startMinute = bidStart.getMinutes();
 
-    res.json(startHour)
+
+    res.json("type:", typeof product.bidStartTime)
     /*
         const newBid = new Bid(req.body)
         newBid["userId"] = req.user._id

@@ -26,7 +26,7 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
 
 
 
-    res.json("type:", typeof product.bidStartTime)
+    res.json(currentHour)
     /*
         const newBid = new Bid(req.body)
         newBid["userId"] = req.user._id

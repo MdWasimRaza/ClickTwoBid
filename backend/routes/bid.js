@@ -19,14 +19,18 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
     const currentMinuts = istNow.getMinutes()
     const currentHour = istNow.getHours();
     const newBid = new Bid(req.body)
-    const product = await Product.findById(newBid.productId)
+    newBid["userId"] = req.user._id
+    newBid["userName"] = req.user.username
+    const addedBid = await newBid.save();
+    res.status(200).json(addedBid)
+    // const product = await Product.findById(newBid.productId)
     /*const [startHour, startMinute] = product.bidStartTime
         ? product.bidStartTime.split(":").map(Number)
         : [];*/
 
 
 
-    res.json(currentHour)
+    //res.json(currentHour)
     /*
         const newBid = new Bid(req.body)
         newBid["userId"] = req.user._id

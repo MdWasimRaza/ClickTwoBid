@@ -18,17 +18,18 @@ router.post("/placebid", wrapAsync(async (req, res, next) => {
     const istNow = new Date(now.getTime() + (istOffset + utcOffset) * 60 * 1000);
     const currentMinuts = istNow.getMinutes()
     const currentHour = istNow.getHours();
-
-    const newBid = new Bid(req.body)
-    newBid["userId"] = req.user._id
-    newBid["userName"] = req.user.username
-    const product = await Product.findById(newBid.productId)
-    //const [hours, minutes] = (product?.bidStartTime?.split(":").map(Number)) || [];
-    const [hours, minutes] = product.bidStartTime
-        ? product.bidStartTime.split(":").map(Number)
-        : [];
-    res.json({ currentHour, currentMinuts, hours, minutes, newBid })
-
+    res.json(currentHour)
+    /*
+        const newBid = new Bid(req.body)
+        newBid["userId"] = req.user._id
+        newBid["userName"] = req.user.username
+        const product = await Product.findById(newBid.productId)
+        //const [hours, minutes] = (product?.bidStartTime?.split(":").map(Number)) || [];
+        const [hours, minutes] = product.bidStartTime
+            ? product.bidStartTime.split(":").map(Number)
+            : [];
+        res.json({ currentHour, currentMinuts, hours, minutes, newBid })
+    */
     /*
         if (hours === currentHour && minutes > currentMinuts) {
             const addedBid = await newBid.save();
